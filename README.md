@@ -16,38 +16,7 @@ A simple todo App that can create task, market complete and delete the task when
 - hive generator : for hive
 <br/>
 <h1>AppScreens</h1>
-<div class="grid container">
-    <figure><img src="screens/image1.jpeg" alt="delete"></figure>
-    <figure><img src="screens/image2.jpeg" alt="AppScreen"></figure>
-    <figure><img src="screens/image3.jpeg" alt="AddTask"></figure>
-    <figure><img src="screens/image4.jpeg" alt="Marked Done"></figure>
-  </div>
-
-  <style>
-    figure {
-  overflow: hidden;
-  border-radius: 9px;
-}
-
-img {
-  display: block;
-  width: 100%;
-  transition: scale 0.4s ease;
-}
-
-img:hover {
-  scale: 1.1;
-}
-
-.container {
-  width: min(800px, 100% - 2rem);
-  margin: 5rem auto;
-}
-
-.grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 1fr;
-}
-  </style>
+<img src="screens/image1.jpeg" alt="delete"  width="500" height="600">
+<img src="screens/image2.jpeg" alt="AppScreen">
+<img src="screens/image3.jpeg" alt="AddTask">
+<img src="screens/image4.jpeg" alt="Marked Done">
