@@ -17,6 +17,6 @@ A simple todo App that can create task, market complete and delete the task when
 <br/>
 <h1>AppScreens</h1>
 <img src="screens/image1.jpeg" alt="delete"  width="125" height="250">
-<img src="screens/image2.jpeg" alt="AppScreen">
-<img src="screens/image3.jpeg" alt="AddTask">
-<img src="screens/image4.jpeg" alt="Marked Done">
+<img src="screens/image2.jpeg" alt="AppScreen" width="125" height="250">
+<img src="screens/image3.jpeg" alt="AddTask" width="125" height="250">
+<img src="screens/image4.jpeg" alt="Marked Done" width="125" height="250">
