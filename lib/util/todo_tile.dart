@@ -8,10 +8,12 @@ class ToDoTile extends StatelessWidget {
   final String taskNAme;
   final bool taskcompleted;
   Function(bool?)? onChanged;
+  final Function(BuildContext)? EditTask;
   Function(BuildContext)? deleteFunction;
 
   ToDoTile({
     super.key,
+    required this.EditTask,
     required this.taskNAme,
     required this.taskcompleted,
     required this.onChanged,
@@ -31,6 +33,12 @@ class ToDoTile extends StatelessWidget {
               backgroundColor: Colors.red.shade300,
               borderRadius: BorderRadius.circular(12),
               onPressed: deleteFunction,
+            ),
+            SlidableAction(
+              icon: Icons.edit,
+              backgroundColor: Colors.grey.shade300,
+              borderRadius: BorderRadius.circular(12),
+              onPressed: EditTask,
             ),
           ],
         ),

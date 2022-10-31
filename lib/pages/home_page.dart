@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:todoapp/data/database.dart';
 import 'package:todoapp/util/dialogue_box.dart';
+import '../component/my_alert_box.dart';
 import '../util/todo_tile.dart';
 
 class HomePage extends StatefulWidget {
@@ -68,6 +68,37 @@ class _HomePageState extends State<HomePage> {
       },
     );
   }
+  //edit task
+  // open habit settings to edit
+  void EditTask(int index) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return MyAlertBox(
+          controller: _controller,
+          hintText: db.todoList[index][0],
+          onSave: () => saveExistingHabit(index),
+          onCancel: cancelDialogBox,
+        );
+      },
+    );
+  }
+  void cancelDialogBox() {
+    // clear textfield
+    _controller.clear();
+
+    // pop dialog box
+    Navigator.of(context).pop();
+  }
+  // save existing habit with a new name
+  void saveExistingHabit(int index) {
+    setState(() {
+      db.todoList[index][0] = _controller.text;
+    });
+    _controller.clear();
+    Navigator.pop(context);
+    db.updateDatabase();
+  }
 
   //delete task
   void deleteTask(int index) {
@@ -99,6 +130,7 @@ class _HomePageState extends State<HomePage> {
             taskcompleted: db.todoList[index][1],
             onChanged: (value) => checkBoxChanged(value, index),
             deleteFunction: (context) => deleteTask(index),
+            EditTask: (context)=>EditTask(index),
           );
         },
       ),
